@@ -1,0 +1,17 @@
+E:\Projetos\Flow\Infra\bin\Debug\net8.0\Infra.deps.json
+E:\Projetos\Flow\Infra\bin\Debug\net8.0\Infra.runtimeconfig.json
+E:\Projetos\Flow\Infra\bin\Debug\net8.0\Infra.dll
+E:\Projetos\Flow\Infra\bin\Debug\net8.0\Infra.pdb
+E:\Projetos\Flow\Infra\bin\Debug\net8.0\Domain.dll
+E:\Projetos\Flow\Infra\bin\Debug\net8.0\Domain.pdb
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.csproj.AssemblyReference.cache
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.AssemblyInfoInputs.cache
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.AssemblyInfo.cs
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.csproj.CoreCompileInputs.cache
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.dll
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\refint\Infra.dll
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.pdb
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.genruntimeconfig.cache
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\ref\Infra.dll
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.csproj.Up2Date
