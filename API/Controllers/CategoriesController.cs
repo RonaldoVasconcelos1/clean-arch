@@ -1,5 +1,7 @@
-﻿using Application.DTOs;
+﻿using API.Validation;
+using Application.DTOs;
 using Application.Interfaces;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -10,7 +12,8 @@ public class CategoriesController : MainController
 {
     private readonly ICategoryService _categoryService;
 
-    public CategoriesController(ICategoryService categoryService)
+    public CategoriesController(ICategoryService categoryService, IMediator mediator, ILogger<CategoriesController> logger, IValidatorService validatorService) 
+        : base(mediator, logger, validatorService)
     {
         _categoryService = categoryService;
     }
@@ -24,7 +27,7 @@ public class CategoriesController : MainController
             return NotFound("Category not found");
         }
 
-        return CustomResponse(categories);
+        return Ok(categories);
     }
 
     [HttpGet("{id:int}", Name = "GetCategory")]
@@ -36,7 +39,7 @@ public class CategoriesController : MainController
             return NotFound("Category not found");
         }
 
-        return CustomResponse(category);
+        return Ok(category);
     }
 
     [HttpPost]
@@ -48,6 +51,13 @@ public class CategoriesController : MainController
         await _categoryService.Add(categoryDto);
 
         return new CreatedAtRouteResult("GetCategory", new { id = categoryDto.Id }, categoryDto);
+    }
+    [Route("api/categories/teste")]
+
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] CreateOrderCommand categoryDto)
+    {
+        return await SendCommand(categoryDto);
     }
 
     [HttpPut]

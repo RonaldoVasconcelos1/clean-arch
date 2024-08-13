@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using System.Reflection;
+using Application.Interfaces;
 using Application.Mappings;
 using Application.Products.Commands;
 using Application.Products.Handlers;
@@ -34,9 +35,8 @@ public static class DependencyInjection
         services.AddScoped<IProductService, ProductUseCase>();
 
         services.AddAutoMapper(typeof(MappingProfile));
-
-        var myhandlers = AppDomain.CurrentDomain.Load("Application");
-        services.AddMediatR(myhandlers);
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            
 
         return services;
     }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers;
 [Route("api/products")]
 [ApiController]
-public class ProductsController : MainController
+public class ProductsController : ControllerBase
 {
     private readonly IProductService _productService;
 

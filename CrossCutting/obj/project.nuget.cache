@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "LHoTjjT921nru6gUBkxPu0UpIFrbx18Yl+l0Im5Do7MX2Y4umCbB2zM5/kdvMKiHamZEt+31UnrYWAzbBQ6qyQ==",
+  "dgSpecHash": "U1dqT2wZwlUoB99EWo09402UKRJ0Wb+hxClAWjeUO+TvYTfkuDWjuuMkV6j+ZOmCjyO36FsmNdX2n+Q6hVUspA==",
   "success": true,
   "projectFilePath": "E:\\Projetos\\Flow\\CrossCutting\\CrossCutting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ronav\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\ronav\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

@@ -15,3 +15,4 @@ E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.pdb
 E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.genruntimeconfig.cache
 E:\Projetos\Flow\Infra\obj\Debug\net8.0\ref\Infra.dll
 E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.csproj.Up2Date
+E:\Projetos\Flow\Infra\obj\Debug\net8.0\Infra.sourcelink.json

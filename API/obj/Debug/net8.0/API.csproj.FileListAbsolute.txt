@@ -138,3 +138,4 @@ E:\Projetos\Flow\API\bin\Debug\net8.0\MediatR.Contracts.dll
 E:\Projetos\Flow\API\bin\Debug\net8.0\Core.dll
 E:\Projetos\Flow\API\bin\Debug\net8.0\Core.pdb
 E:\Projetos\Flow\API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+E:\Projetos\Flow\API\obj\Debug\net8.0\API.sourcelink.json

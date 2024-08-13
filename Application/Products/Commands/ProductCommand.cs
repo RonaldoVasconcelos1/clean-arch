@@ -1,10 +1,9 @@
-﻿using Core.Command;
-using Domain.Entities;
+﻿using Application.DTOs;
 using MediatR;
 
 namespace Application.Products.Commands;
 
-public class ProductCommand: IRequest<Product>
+public class ProductCommand: IRequest<ProductDTO>
 {
     public string? Name { get; set; }
     public string? Description { get; set; }

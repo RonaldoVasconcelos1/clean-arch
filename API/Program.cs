@@ -1,4 +1,9 @@
+using System.Reflection;
+using API.Validation;
+using Application.DTOs;
 using CrossCutting;
+using FluentValidation;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +14,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddSwaggerGen();
+builder.Services.AddMediatR(Assembly.Load("Application"));
+builder.Services.AddScoped<IValidatorService, ValidatorService>();
+builder.Services.AddTransient<IValidator<CreateOrderCommand>, CreateOrderCommandValidator>();
 
 var app = builder.Build();
 

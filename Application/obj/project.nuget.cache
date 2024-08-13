@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Qqrl56fneISUV5V3/wYqONwCkD+ZcuX4SqMqTIR2vnbQmNXeVQoIH9X/KUvPP6iB/gnnMyTcK6Ss2afwzMWXTg==",
+  "dgSpecHash": "WhrDjAC+kzOi8YL9eEWEqxbTU6ppyjDampcwCExy40tw+CP+X9ADsUiLDfD1dlRt0DB7q4myMxk2xSrLdjg5HQ==",
   "success": true,
   "projectFilePath": "E:\\Projetos\\Flow\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ronav\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\ronav\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",

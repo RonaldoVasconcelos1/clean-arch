@@ -21,3 +21,4 @@ E:\Projetos\Flow\CrossCutting\obj\Debug\net8.0\ref\CrossCutting.dll
 E:\Projetos\Flow\CrossCutting\obj\Debug\net8.0\CrossCut.C7E4F570.Up2Date
 E:\Projetos\Flow\CrossCutting\bin\Debug\net8.0\Core.dll
 E:\Projetos\Flow\CrossCutting\bin\Debug\net8.0\Core.pdb
+E:\Projetos\Flow\CrossCutting\obj\Debug\net8.0\CrossCutting.sourcelink.json

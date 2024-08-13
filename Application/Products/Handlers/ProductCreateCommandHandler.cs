@@ -1,4 +1,5 @@
-﻿using Application.Products.Commands;
+﻿using Application.DTOs;
+using Application.Products.Commands;
 using Core.Handler;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -7,25 +8,34 @@ using MediatR;
 
 namespace Application.Products.Handlers;
 
-public class ProductCreateCommandHandler : IRequestHandler<ProductCreateCommand, Product>
+public class ProductCreateCommandHandler : IRequestHandler<ProductCreateCommand, ProductDTO>
 {
     private readonly IProductRepository _productRepository;
-    
+
     public ProductCreateCommandHandler(IProductRepository productRepository)
     {
         _productRepository = productRepository;
     }
-   
-    public async Task<Product> Handle(ProductCreateCommand request, CancellationToken cancellationToken)
+
+    public async Task<ProductDTO> Handle(ProductCreateCommand request, CancellationToken cancellationToken)
     {
         var product = new Product(request.Name, request.Description, request.Price, request.Stock, request.Image);
 
-        if (product == null){
+        if (product == null)
+        {
             throw new ApplicationException($"Error creating entity.");
         }
-        else{
-            product.CategoryId = request.CategoryId;
-            return await _productRepository.AddAsync(product);
-        }
+
+        product.CategoryId = request.CategoryId;
+        await _productRepository.AddAsync(product);
+        
+        return new ProductDTO()
+        {
+            Name = product.Name,
+            Description = product.Description,
+            Category = product.Category,
+            Image = product.Image,
+            Price = product.Price
+        };
     }
 }

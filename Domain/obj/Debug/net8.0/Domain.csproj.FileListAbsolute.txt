@@ -9,3 +9,4 @@ E:\Projetos\Flow\Domain\obj\Debug\net8.0\Domain.dll
 E:\Projetos\Flow\Domain\obj\Debug\net8.0\refint\Domain.dll
 E:\Projetos\Flow\Domain\obj\Debug\net8.0\Domain.pdb
 E:\Projetos\Flow\Domain\obj\Debug\net8.0\ref\Domain.dll
+E:\Projetos\Flow\Domain\obj\Debug\net8.0\Domain.sourcelink.json
