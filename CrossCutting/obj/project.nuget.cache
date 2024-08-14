@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "U1dqT2wZwlUoB99EWo09402UKRJ0Wb+hxClAWjeUO+TvYTfkuDWjuuMkV6j+ZOmCjyO36FsmNdX2n+Q6hVUspA==",
+  "dgSpecHash": "M5SOZyHrTmIEXSJ65urCZZRwTWWgFDGGKyomPtvJELbZv6COjFOOrZb+Ft7uS0T8rGpVHDUkwfVssKoyVXGvKg==",
   "success": true,
   "projectFilePath": "E:\\Projetos\\Flow\\CrossCutting\\CrossCutting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ronav\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\ronav\\.nuget\\packages\\awssdk.core\\3.7.400.5\\awssdk.core.3.7.400.5.nupkg.sha512",
+    "C:\\Users\\ronav\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.301\\awssdk.extensions.netcore.setup.3.7.301.nupkg.sha512",
+    "C:\\Users\\ronav\\.nuget\\packages\\awssdk.simplesystemsmanagement\\3.7.401.3\\awssdk.simplesystemsmanagement.3.7.401.3.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

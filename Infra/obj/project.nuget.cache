@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "F0LHzti7GPCI1A4f7JjNuq3Ms/qiPnWiiMAv0904kX/xsizPtvOkmO2xXD/IwOhASBjTOKqWctTUQB6q2K94XQ==",
+  "dgSpecHash": "QieB/npbyIqHUmGJ1dHK3W+PEnQt9HZnRrRAsKqqF9Zz/L/3ss3yTNgvPkRvQSACAkH3yDsH+UYzFnvZxC3AxQ==",
   "success": true,
   "projectFilePath": "E:\\Projetos\\Flow\\Infra\\Infra.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ronav\\.nuget\\packages\\awssdk.core\\3.7.400.5\\awssdk.core.3.7.400.5.nupkg.sha512",
+    "C:\\Users\\ronav\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.301\\awssdk.extensions.netcore.setup.3.7.301.nupkg.sha512",
+    "C:\\Users\\ronav\\.nuget\\packages\\awssdk.simplesystemsmanagement\\3.7.401.3\\awssdk.simplesystemsmanagement.3.7.401.3.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ronav\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
