@@ -3,11 +3,14 @@ using MediatR;
 
 namespace Application.Products.Handlers;
 
-public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, GenericCommandResult>
+public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, CommandResult>
 {
-    public async Task<GenericCommandResult> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+    public async Task<CommandResult> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
     {
-        // Implementação do comando
-        return new GenericCommandResult(true, "Order created successfully", new { OrderId = 123 });
+        var orderId = 123;
+
+        // Retornar um resultado de sucesso utilizando o formato esperado
+        return CommandResult.SuccessResult(new { OrderId = orderId });
+
     }
 }

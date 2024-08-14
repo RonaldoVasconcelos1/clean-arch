@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.DTOs;
 
-public class CreateOrderCommand :  IRequest<GenericCommandResult>
+public class CreateOrderCommand :  IRequest<CommandResult>
 {
     public CreateOrderCommand(string? name)
     {
