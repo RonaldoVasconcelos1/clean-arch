@@ -1,18 +1,10 @@
-﻿using API.Validation;
-using Application;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using ValidationException = FluentValidation.ValidationException;
-
-namespace API.Controllers;
-
 [ApiController]
 public abstract class MainController : ControllerBase
 {
     private readonly IMediator _mediator;
     private readonly ILogger<MainController> _logger;
     private readonly IValidatorService _validatorService;
-    
+
     public MainController(IMediator mediator, ILogger<MainController> logger, IValidatorService validatorService)
     {
         _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
@@ -26,67 +18,68 @@ public abstract class MainController : ControllerBase
         if (command == null)
         {
             _logger.LogWarning("Received null command");
-            return BadRequestResponse("Command cannot be null", null);
+            return BadRequestResponse("Command cannot be null");
         }
 
         try
         {
-            
             var result = await _mediator.Send(command);
 
-            if (result.IsCreated)
+            if (result.Data != null && result.Data is IEnumerable<object> listData && !listData.Any())
             {
-                _logger.LogInformation("Entity created successfully");
-                return CreatedResponse(result.Message, result.Data);
+                return NoContentResponse();
             }
 
-            if (result.Success)
+            if (result.Data == null)
+            {
+                _logger.LogWarning("Data not found");
+                return NotFoundResponse("Data not found");
+            }
+
+            if (result.Data != null)
             {
                 _logger.LogInformation("Command processed successfully");
-                return OkResponse(result.Message, result.Data);
+                return OkResponse(result.Data);
             }
-            else
-            {
-                _logger.LogWarning("Command processing failed: {Message}", result.Message);
-                return BadRequestResponse(result.Message, result.Data);
-            }
+
+            _logger.LogWarning("Command processing failed");
+            return BadRequestResponse("Command processing failed");
         }
         catch (ValidationException ex)
         {
             _logger.LogWarning("Validation exception occurred: {Message}", ex.Message);
-            return UnprocessableEntityResponse(ex.Message, ex.Errors);
+            return UnprocessableEntityResponse(ex.Errors.Select(e => e.ErrorMessage).ToList());
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "An unexpected error occurred while processing the command");
-            return InternalServerErrorResponse(ex.Message, null);
+            return InternalServerErrorResponse("An unexpected error occurred");
         }
     }
 
     // Custom response methods
 
-    protected IActionResult OkResponse(string message, object data) =>
-        Ok(new GenericCommandResult(true, message, data));
+    protected IActionResult OkResponse(object data) =>
+        Ok(GenericCommandResult.SuccessResult(data));
 
-    protected IActionResult CreatedResponse(string message, object data) =>
-        Created(string.Empty, new GenericCommandResult(true, message, data));
+    protected IActionResult CreatedResponse(object data) =>
+        Created(string.Empty, GenericCommandResult.SuccessResult(data));
 
-    protected IActionResult NoContentResponse(string message = "No content") =>
+    protected IActionResult NoContentResponse() =>
         NoContent();
 
     protected IActionResult NotFoundResponse(string message) =>
-        NotFound(new GenericCommandResult(false, message, null));
-    
-    protected IActionResult BadRequestResponse(string message, object data) =>
-        Ok(new GenericCommandResult(true, message, data));
+        NotFound(GenericCommandResult.ErrorResult(new List<string> { message }));
+
+    protected IActionResult BadRequestResponse(string message) =>
+        BadRequest(GenericCommandResult.ErrorResult(new List<string> { message }));
 
     protected IActionResult FailedDependencyResponse(string message) =>
-        StatusCode(424, new GenericCommandResult(false, message, null));
+        StatusCode(424, GenericCommandResult.ErrorResult(new List<string> { message }));
 
-    protected IActionResult UnprocessableEntityResponse(string message, object errors) =>
-        StatusCode(422, new GenericCommandResult(false, message, errors));
+    protected IActionResult UnprocessableEntityResponse(List<string> errors) =>
+        StatusCode(422, GenericCommandResult.ErrorResult(errors));
 
-    protected IActionResult InternalServerErrorResponse(string message, object data) =>
-        StatusCode(500, new GenericCommandResult(false, message, data));
-    
+    protected IActionResult InternalServerErrorResponse(string message) =>
+        StatusCode(500, GenericCommandResult.ErrorResult(new List<string> { message }));
 }
