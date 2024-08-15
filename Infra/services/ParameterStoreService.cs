@@ -4,34 +4,24 @@ using Microsoft.Extensions.Logging;
 
 namespace Infra.services;
 
-public class ParameterStoreService: IParameterStoreService
+public class SecretsManagerService: ISecretsManagerService
 {
     private readonly IAmazonSimpleSystemsManagement _ssmClient;
     private readonly ILogger<ParameterStoreService> _logger;
 
-    public ParameterStoreService(IAmazonSimpleSystemsManagement ssmClient, ILogger<ParameterStoreService> logger)
+    public ParameterStoreService(IAmazonSimpleSystemsManagement ssmClient)
     {
         _ssmClient = ssmClient;
         _logger = logger;
     }
 
-    public async Task<string> GetParameterAsync(string parameterName)
+    private async Task<string> GetSecretValueAsync(string secretArn)
     {
-        try
+        var response = await _secretsManager.GetSecretValueAsync(new GetSecretValueRequest
         {
-            var request = new GetParameterRequest
-            {
-                Name = parameterName,
-                WithDecryption = true
-            };
+            SecretId = secretArn
+        });
 
-            var response = await _ssmClient.GetParameterAsync(request);
-            return response.Parameter.Value;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError($"Error fetching parameter {parameterName}: {ex.Message}");
-            throw;
-        }
+        return response.SecretString;
     }
 }
